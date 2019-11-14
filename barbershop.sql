@@ -46,5 +46,32 @@ ALTER TABLE usluga add FOREIGN KEY (sisanje) REFERENCES sisanje (id_sifra);
 ALTER TABLE usluga add FOREIGN KEY (brijanje) REFERENCES brijanje (id_sifra);
 
 
+insert into sisanje (id_sifra,cijena)
+value (null,80.00);
+
+insert into brijanje (id_sifra,cijena)
+value (null,50.00);
+
+delete from brijanje where (id_sifra=2) ;
+delete from brijanje where (id_sifra=3) ;
+
+insert into djelatnica (id_sifra,ime)
+values (null,'Tonino');
+
+insert into usluga (id_sifra,naziv_usluge,sisanje,brijanje)
+value (null,'VIPtretman',1,1);
+
+insert into usluga (id_sifra,naziv_usluge,sisanje)
+value (null,'Sisanje',1);
+
+insert into usluga (id_sifra,naziv_usluge,brijanje)
+value (null,'Brijanje',1);
+
+insert into posjeta (id_sifra, djelatnica,usluga)
+value (null,1,1);
+
+insert into korisnik (id_sifra,posjeta,djelatnica)
+values (null,1,1);
+
 
 
