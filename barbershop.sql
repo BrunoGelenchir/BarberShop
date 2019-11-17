@@ -19,6 +19,11 @@ create table posjeta (
     usluga int not null
 );
 
+create table posjeta_usluga (
+      id_sifra int,
+      id_sifra int
+);
+
 create table usluga(
     id_sifra int not null primary key auto_increment,
     naziv_usluge varchar (10) not null,
@@ -44,6 +49,9 @@ ALTER TABLE posjeta add FOREIGN KEY (djelatnik) REFERENCES djelatnik (id_sifra);
 
 ALTER TABLE usluga add FOREIGN KEY (sisanje) REFERENCES sisanje (id_sifra);
 ALTER TABLE usluga add FOREIGN KEY (brijanje) REFERENCES brijanje (id_sifra);
+
+Alter table posjeta_usluga add FOREIGN key (id_sifra) REFERENCES usluga (id_sifra);
+Alter table posjeta_usluga add FOREIGN key (id_sifra) REFERENCES posjeta (id_sifra);
 
 
 insert into sisanje (id_sifra,cijena)
